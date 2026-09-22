@@ -1,0 +1,16 @@
+COMO ABRIR LA SOLICITUD EN EL TELEFONO
+
+1. Para probarla sin internet:
+   - Descomprime este ZIP.
+   - Abre index.html en una computadora.
+   - Para verla en el telefono, el sitio debe estar publicado en internet.
+
+2. Para convertirla en una pagina web:
+   - Sube index.html, style.css y script.js a un servicio de hosting estatico como GitHub Pages, Netlify o Vercel.
+   - La pagina principal siempre debe ser index.html.
+   - Luego abre el enlace que te entregue el servicio desde el telefono.
+
+3. IMPORTANTE:
+   Este formulario actualmente imprime/guarda PDF desde el navegador.
+   Los datos NO se envian automaticamente por correo solo por tener HTML/CSS/JS.
+   Para enviar la solicitud llena al correo de la empresa hace falta conectar un servicio de formularios/backend.
