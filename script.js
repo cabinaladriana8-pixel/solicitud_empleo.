@@ -1,2 +1,42 @@
-const c=document.getElementById("firma");if(c){const x=c.getContext("2d");let d=false;x.lineWidth=2;x.lineCap="round";function p(e){let r=c.getBoundingClientRect(),q=e.touches?e.touches[0]:e;return{x:(q.clientX-r.left)*c.width/r.width,y:(q.clientY-r.top)*c.height/r.height}}function s(e){e.preventDefault();d=true;let q=p(e);x.beginPath();x.moveTo(q.x,q.y)}function m(e){if(!d)return;e.preventDefault();let q=p(e);x.lineTo(q.x,q.y);x.stroke()}function u(){d=false}c.addEventListener("mousedown",s);c.addEventListener("mousemove",m);c.addEventListener("mouseup",u);c.addEventListener("touchstart",s,{passive:false});c.addEventListener("touchmove",m,{passive:false});c.addEventListener("touchend",u);document.getElementById("limpiar").onclick=()=>x.clearRect(0,0,c.width,c.height)}
-document.querySelector("form").addEventListener("submit",e=>{e.preventDefault();alert("Formulario preparado. Para envío automático con archivos se necesita conectar un servicio o servidor de correo.")});
+document.addEventListener("DOMContentLoaded", () => {
+
+  /*
+    Permite marcar solamente una opción
+    dentro de cada grupo de casillas.
+  */
+
+  document.querySelectorAll("[data-check]").forEach(box => {
+
+    box.addEventListener("change", () => {
+
+      if (box.checked) {
+
+        document
+          .querySelectorAll(
+            `[data-check="${box.dataset.check}"]`
+          )
+          .forEach(x => {
+
+            if (x !== box) {
+              x.checked = false;
+            }
+
+          });
+
+      }
+
+    });
+
+  });
+
+});
+
+
+/*
+  Función para imprimir o guardar
+  la solicitud como PDF.
+*/
+
+function imprimir() {
+  window.print();
+}
